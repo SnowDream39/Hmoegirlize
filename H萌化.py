@@ -7,7 +7,8 @@ for p in range(length):
     o=original.readline()
     i=0
     while i < len(o):
-        if o[i:i+2]=='[[':
+        if o[i:i+2]=='[[' \
+           and not (o[i+2:i+7]=='File:' or o[i+2:i+7]=='file:'or o[i+2:i+5]=='文件:'):
             after.write('{{萌百|')
             i+=2
             while o[i:i+2]!=']]':
